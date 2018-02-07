@@ -1,0 +1,491 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<meta name="viewport" width="device-width" initial-scale="1">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.css">
+	<title>Training</title>
+	</head>
+<body>
+<script type="text/javascript">
+
+
+	</script>
+
+
+</body>
+<script type="text/javascript" src="bootstrap/tether/dist/js/tether.js"></script>
+	<script type="text/javascript" src="bootstrap/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="bootstrap/bootstrap.js"></script>
+	<script type="text/javascript" src="bootstrap/popper.min.js"></script>
+</html> -->
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Check</title>
+</head>
+<body>
+<script type="text/javascript">
+	var x = 12;
+
+
+	function answer(n) {
+		var a = 7;
+		// console.log(x + a);
+		return (a*n);
+
+	}
+
+
+
+	answer(9);
+
+
+	console.log(x + a);
+</script>
+
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	function hypotenuse(a, b) {
+		function square(k) {
+			return k*k;
+		}
+		console.log( Math.sqrt( square(a) + square(b) ) ); 
+	}
+
+	hypotenuse(3, 4);
+</script>
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<meta name="viewport" width="device-width" initial-scale="1">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.css">
+	<title></title>
+</head>
+<body>
+<div class="text-primary">
+	Current Time and date
+</div>
+<div>
+	Set Alarm:
+		<input type="time" name="">
+	
+</div>
+<script type="text/javascript">
+	// Load an alarm sound
+    var sound = new Audio("victorysong.mp3");
+    sound.loop = true;
+
+// I just made this because It's easier to read.
+getID = function(value){ return document.getElementById( value ); };
+
+// List of all my objects im working with, and variables
+var hour = getID("hour"),
+    minute = getID("minute"),
+    second = getID("second"),
+    aHour = getID("aHour"),
+    aMinute = getID("aMinute"),
+    aSecond = getID("aSecond"),
+    aSwitch = getID("aSwitch"),
+    aOff = getID("turnOff"),
+    refreshTime = 500,
+    alarmTimer = null;
+
+aSwitch.On = false;
+aSwitch.value = "OFF";
+
+// Turns the alarm off or on
+function alarmSwitch(){
+    switch( aSwitch.On )
+    {
+        case false:
+            aSwitch.On = true;
+            aSwitch.value = "ON";
+
+            alarmSet();
+        break;
+        case true:
+        aSwitch.On = false;
+            aSwitch.value = "OFF";
+
+            // CLEARS THE BEEPER 
+            clearTimeout( alarmTimer );
+        break;
+    }
+}
+
+// Stops the alarm and closes the "stop button"
+function disableAlarm(){
+    sound.pause();
+    aOff.style.display = "none";
+}
+
+//Fires the BEEPER noise, -- this is called from the alarmTimer timeout
+function alarmFire(){
+    if( aSwitch.On )
+    {
+        aOff.style.display = "block";
+        sound.play();
+    }
+    else
+        alert("error..");
+}
+
+/*This is how the beeper goes off:
+ * It first checks the set time so the alarm can go to the 
+ * next day without the user putting the date in.
+ * The beeper goes off over the span of milliseconds difference.
+ */
+function alarmSet(){
+clearTimeout( alarmTimer );
+
+    var tomo = false;// tomorrow.
+    if( aHour.value < hour.value )
+        {tomo = true;}
+    else if( aHour.value == hour.value && aMinute.value < minute.value )
+        {tomo = true;}
+    else if( aHour.value == hour.value && aMinute.value == minute.value 
+            && aSecond.value < second.value )
+        {tomo = true;}
+
+    var date = new Date(), year = date.getFullYear(), month = date.getMonth(), day = parseInt( date.getDate() );
+
+    if( tomo ){day += 1;}
+
+    time = new Date( year, month, day, aHour.value, aMinute.value, aSecond.value, date.getMilliseconds() );
+    time = ( time - (new Date()) );
+
+    // This turns the alarm back on if it's off when this function is called.
+    if( aSwitch.On == false)
+        alarmSwitch();
+
+    alarmTimer = setTimeout( function(){alarmFire();} ,parseInt(time) );
+}
+
+// This is how the clock works
+timeRefresh = function(){
+    date = new Date();
+    hour.innerHTML = date.getHours();
+    hour.value = hour.innerHTML;
+     minute.innerHTML = date.getMinutes();
+    minute.value = minute.innerHTML;
+    second.innerHTML = date.getSeconds();
+    second.value = second.innerHTML;
+
+    setTimeout("timeRefresh()", refreshTime);
+};
+
+// This is called whenever the inputs are changed to stop invalid forms.
+numCap = function( obj, min, max){
+    obj.value = Math.max(obj.min, Math.min(obj.max, obj.value) );
+
+    alarmSet();// Starts up the alarm automatically when a value is changed.
+};
+
+window.onload=function(){
+    timeRefresh();
+
+    var a = getID("aHour");
+    a.value = hour.innerHTML;
+    a = getID("aMinute");
+    a.value = minute.innerHTML;
+    a = getID("aSecond");
+    a.value = second.innerHTML;
+};
+</script>
+</body>
+</html>
+ -->
+ <!-- <!DOCTYPE html>
+ <html>
+ <head>
+ 	<title></title>
+ 	<script language="javascript">
+//Enter path to mid file to play
+var musicsrc="victorysong"
+
+function sivamtime() {
+	now=new Date();
+	hour=now.getHours();
+	min=now.getMinutes();
+	sec=now.getSeconds();
+
+if (min<=9) {
+	min="0"+min;
+ }
+if (sec<=9) {
+	sec="0"+sec;
+ }
+if (hour>12) {
+	hour=hour-12;
+	add="pm";
+ }
+else {
+	hour=hour;
+	add="am";
+ }
+if (hour==12) {
+	add="pm";
+ }
+if (hour==00) {
+	hour="12";
+ }
+
+  document.hours.clock.value = (hour<=9) ? "0"+hour : hour;
+  document.minutes.clock.value = min;
+  document.seconds.clock.value = sec;
+  document.ampm.clock.value= add;
+ setTimeout("sivamtime()", 1000);
+
+}
+
+playit=false
+function playmusic(){
+musicwin=window.open("","","width=100,height=100")
+if (navigator.appName=="Microsoft Internet Explorer")
+musicwin.document.write('<bgsound src='+'"'+musicsrc+'"'+' loop="infinite">')
+else
+musicwin.document.write('<embed src=\"'+musicsrc+'\" hidden="true" border="0" width="20" height="20" autostart="true" loop="true">')
+musicwin.document.close()
+}
+
+function soundcheck(cbox){
+playit=cbox.checked
+}
+
+function alarm() {
+    note = document.arlm.message.value;
+    if (note == '') {note = 'ALARM!!';}
+
+    hrs = document.arlm.hr.value;
+    min = document.arlm.mts.value;
+    apm = document.arlm.am_pm.value;
+
+ if ((document.hours.clock.value == hrs) &&
+    (document.minutes.clock.value == min) &&
+    (document.ampm.clock.value == apm)) {
+     if (playit)
+     playmusic()
+     else
+     alert(note);
+     return false}
+
+ if (hrs == '') {alert('The Hour field is empty'); return false}
+ if (min == '') {alert('The Minute field is empty'); return false}
+ if (apm == '') {alert('The am/pm field is empty'); return false}
+
+ if (hrs.length == 1) {document.arlm.hr.value = '0' + hrs}
+ if (min.length == 1) {document.arlm.mts.value = '0' + min}
+ if (hrs.length > 2) {alert('The Hour is wrongly typed.'); return false}
+ if (min.length > 2) {alert('The Minute is wrongly typed.'); return false}
+ if (apm != 'am' && apm != 'pm' ) {alert('The am/pm is wrongly typed.'); return false}
+
+ setTimeout("alarm()", 1000);}
+
+</script>
+
+ </head>
+ <body>
+ <table border="0" align="center" bgcolor="#c0c0c0" cellspacing="0" cellpadding="2" width="136">
+	    <tr>
+	      <td colspan="4">
+                 <font size="1" face="verdana, arial, helvetica, ms sans serif">
+                   <b>Current Time</b>
+                 </font>
+              </td>
+            </tr>
+	    <tr>
+	      <td>
+		 <form name="hours">
+	         <p><input type="text" size="2" name="clock"></p>
+	         </form>
+	      </td>
+	      <td>
+		 <form name="minutes">
+	         <p><input type="text" size="2" name="clock" /></p>
+	         </form>
+	      </td>
+	      <td>
+		 <form name="seconds">
+	         <p><input type="text" size="2" name="clock" /></p>
+	         </form>
+	      </td>
+	      <td>
+		 <form name="ampm">
+	         <p><input type="text" size="2" name="clock" /></p>
+	         </form>
+	      </td>
+	    </tr>
+	 </table>
+
+
+         <table border="0" align="center" bgcolor="#c0c0c0" cellspacing="0" cellpadding="2" width="136">
+            <tr>
+	      <td colspan="3">
+	 <form name="arlm">
+                 <font size="1" face="verdana, arial, helvetica, ms sans serif">
+                   <b>Alarm Time</b>
+                 </font>
+              </td>
+            </tr>  
+            <tr align="center">
+	      <td>
+                 <font size="1" face="verdana, arial, helvetica, ms sans serif">
+                    Hour 
+                 </font>
+              </td>
+	      <td>
+                 <font size="1" face="verdana, arial, helvetica, ms sans serif">
+                     Minute
+                 </font>
+              </td>
+	      <td>
+                 <font size="1" face="verdana, arial, helvetica, ms sans serif">
+                    am/pm
+                 </font>
+              </td>
+            </tr>
+	    <tr align="center">
+	      <td>
+	         <input type="text" size="2" name="hr" onFocus="select()" />
+
+	      </td>
+	      <td>
+	           <input type="text" size="2" name="mts" onFocus="select()" />
+	      </td>
+	      <td>
+	          <input type="text" size="2" value="am" name="am_pm" onFocus="select()" />
+	      </td>
+	    </tr>
+            <tr align="left">
+	      <td colspan="3">
+                 <font size="1" face="verdana, arial, helvetica, ms sans serif">
+                    Message
+                 </font>
+              </td>
+            </tr>
+	    <tr align="left">
+              <td colspan="3">
+                 <input type="text" size="15" value="Wake Up!" name="message" /><br>
+<input type="checkbox" name="C1" value="ON" onClick="soundcheck(this)"> <font size="1" face="verdana, arial, helvetica, ms sans serif">Play music?</font>
+	      </td>
+	    </tr>
+            <tr>
+	      <td align="center" colspan="3">
+	         <input type="button" size="2" value="Set Alarm" onClick="alarm()" />
+	      </td>
+	    </tr>
+	    <tr>
+	      <td align="center" colspan="3">
+	         <input type="button" size="2" value="Reset" onClick="reset()" />
+	      </td>
+            </tr>
+	 </table>
+	 </form>
+
+ </body>
+ </html> -->
+ <html>
+<head>
+    <title>Digital Clock using JavaScript</title>
+    <link href="http://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet" type="text/css"/>
+
+    <style>
+        .tabBlock
+        {
+            background-color:red;
+            border:solid 0px #FFA54F;
+            border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;
+            max-width:200px;
+            width:100%;
+            overflow:hidden;
+            display:block;
+        }
+        .clock
+        {
+            vertical-align:middle;
+            font-family:Orbitron;
+            font-size:40px;
+            font-weight:normal;
+            color:blue;
+            padding:0 10px;
+        }
+        .clocklg 
+        {
+            vertical-align:middle; 
+            font-family:Orbitron;
+            font-size:20px;
+            font-weight:normal;
+            color:yellow;
+        }
+    </style>
+</head>
+
+<!-- ON LOAD OF THE PAGE, THE CLOCK WILL START TICKING. -->
+<body onload="digitized();">
+    <div style="background-color:grey;
+        max-width:220px;width:100%;margin:0 auto;padding:20px;">
+
+        <table class="tabBlock" align="center" cellspacing="0" cellpadding="0" border="0">
+            <tr><td class="clock" id="dc"></td>  <!-- THE DIGITAL CLOCK. -->
+                <td>
+                    <table cellpadding="0" cellspacing="0" border="0">
+                    
+                        <!-- HOUR IN 'AM' AND 'PM'. -->
+                        <tr><td class="clocklg" id="dc_hour"></td></tr>
+
+                        <!-- SHOWING SECONDS. -->
+                        <tr><td class="clocklg" id="dc_second"></td></tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+    // OUR FUNCTION WHICH IS EXECUTED ON LOAD OF THE PAGE.
+    function digitized() {
+        var dt = new Date();    // DATE() CONSTRUCTOR FOR CURRENT SYSTEM DATE AND TIME.
+        var hrs = dt.getHours();
+        var min = dt.getMinutes();
+        var sec = dt.getSeconds();
+
+        min = Ticking(min);
+        sec = Ticking(sec);
+
+
+        document.getElementById('dc').innerHTML = hrs + ":" + min;
+        document.getElementById('dc_second').innerHTML = sec;
+
+        if (hrs > 12) { 
+            document.getElementById('dc_hour').innerHTML = 'PM'; 
+        }
+        else { 
+            document.getElementById('dc_hour').innerHTML = 'AM'; 
+        }
+
+        // CALL THE FUNCTION EVERY 1 SECOND (RECURSION).
+        var time
+        time = setInterval('digitized()', 1000);
+    }
+
+    function Ticking(ticVal) {
+        if (ticVal < 10) {
+            ticVal = "0" + ticVal;
+        }
+        return ticVal;
+    }
+</script>
+</html>

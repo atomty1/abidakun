@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Canvas</title>
+</head>
+<body>
+<center>
+<canvas id="newcanvas" width="500px" height="400px" style="border:1px solid red; background-color:grey"></canvas>
+</center>
+<script type="text/javascript">
+	var c = document.getElementById('newcanvas');
+	var pencil = c.getContext('2d');
+	pencil.moveTo(100,140);
+	pencil.lineTo(280,180);
+	pencil.stroke();
+	pencil.beginPath();
+	pencil.arc(200,100,80,0,2*Math.PI)
+	pencil.stroke();
+	pencil.fillText("Hello world", 200, 100);
+</script>
+</body>
+</html>

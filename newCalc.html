@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator </title>
+	<style>
+		body{
+			margin: 0; padding: 0;
+			background-color: #c1c2cf;
+		}
+		#container{
+			border: 4px solid #e7e7cc;
+			background-color: #557c3e;
+			width: 40%;
+			margin: 10px auto;
+			font-family: Helvitica;
+			font-size: 20px;
+		}
+		#output{
+			overflow: auto;
+			margin: 5px;
+		}
+		#clear{
+			width: 10%;
+			background: #f6c4c4;
+			float: left;
+			text-align: center;
+			height: 35px;
+			border-top-left-radius: 7px;
+			border-bottom-left-radius: 7px;
+			line-height: 35px;
+			cursor: pointer;
+		}
+		#ans-field{
+			width: 88%;
+			background-color: #fff;
+			height: 35px;
+			float: left;
+			border-top-right-radius: 7px;
+			border-bottom-right-radius: 7px;
+			text-align: right;
+			padding-right: 4px;
+			line-height: 35px;
+		}
+		#btn ul{
+			list-style-type: none;
+			overflow: auto;
+			margin-left: 0;
+		}
+		#btn li{
+			background-color: #fff;
+			float: left;
+			width: 23%;
+			height: 40px;
+			text-align: center;
+			margin-bottom: 10px;
+			margin-right: 10px;
+			text-align: center;
+			cursor: pointer;
+			line-height: 30px;
+			border-radius: 7px;
+		}
+		#keys li:nth-child(4n){
+			background: #eee;
+			font-size: 20px;
+		}
+		#btn li:active {
+			box-shadow: 0px 0px 50px #272822;
+		}
+		#mFunc li{
+			background-color: #80ff80;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="output">
+			<span id="clear">C</span>
+			<span id="ans-field"></span>
+		</div>
+		<div id="btn">
+		<ul id="mFunc">
+			<li>π</li> <li>sin</li> <li>sin-1</li> <li>√</li>
+			<li>log</li> <li>cos</li> <li>cos-1</li> <li>E^x</li>
+			<li>1/x</li> <li>tan</li> <li>tan-1</li> <li>10^x</li>
+			<!-- <li>%</li> <li>n!</li> <li>3</li> <li>/</li> -->
+		</ul>
+
+		<ul id="keys">
+			<li>0</li> <li>.</li> <li>=</li> <li>+</li>
+			<li>7</li> <li>8</li> <li>9</li> <li>-</li>
+			<li>4</li> <li>5</li> <li>6</li> <li>*</li>
+			<li>1</li> <li>2</li> <li>3</li> <li>/</li>
+		</ul>
+		</div>
+
+
+		
+	</div>
+	
+	<script>
+		var mFunc = document.getElementById('mFunc');
+		var keys = document.getElementById('keys');
+		var clear = document.getElementById('clear');
+		var answer = document.getElementById('ans-field');
+
+		clear.addEventListener('click',function () {
+			answer.innerHTML="";
+		});
+
+		keys.addEventListener('click', function(e){
+			if (e.target.nodeName === "LI") {
+
+				var value = e.target.innerHTML;
+
+				if (value === '=') {
+					try{
+						answer.innerHTML = eval(answer.innerHTML); 
+					} catch(e) {
+						alert('Error! Pls check your values again.');
+					}
+				} else{
+					answer.innerHTML += value;
+				}
+
+			}
+		});
+
+		mFunc.addEventListener('click', function(e){
+			if (e.target.nodeName === "LI") {
+
+				var value = e.target.innerHTML;
+
+				switch(value) {
+					case'π': answer.innerHTML = Math.PI;
+						break;
+					case'log': answer.innerHTML = Math.log(answer.innerHTML);
+						break;
+					case'1/x': answer.innerHTML = (1/answer.innerHTML);
+						break;
+					case'sin': answer.innerHTML = Math.sin(answer.innerHTML);
+						break;
+					case'cos': answer.innerHTML = Math.cos(answer.innerHTML);
+						break;
+					case'tan': answer.innerHTML = Math.tan(answer.innerHTML);
+						break;
+					case'sin-1': answer.innerHTML = Math.asin(answer.innerHTML);
+						break;
+					case'cos-1': answer.innerHTML = Math.acos(answer.innerHTML);
+						break;
+					case'tan-1': answer.innerHTML = Math.atan(answer.innerHTML);
+						break;
+					case'√': answer.innerHTML = Math.sqrt(answer.innerHTML);
+						break;
+					case'E^x': answer.innerHTML = Math.exp(answer.innerHTML);
+						break;
+					case'10^x': answer.innerHTML = Math.pow(10,answer.innerHTML);
+						break;
+					// case'π': answer.innerHTML = Math.PI;
+					// 	break;
+
+				}
+			}
+		});
+	</script>
+</body>
+</html>

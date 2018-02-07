@@ -1,0 +1,46 @@
+#first{
+	background-color: white;
+	border-style: solid;
+	height: 70px;
+	width: 100%;
+}
+.second{
+	/*background-color: blue;*/
+	width: 25%;
+	margin: auto;
+	margin-top: 25px;
+	/*border-radius: 10px;*/
+	width: 100%;
+	/*height: 40px;*/
+	line-height: 40px;
+ 
+}
+ul li{
+	list-style: none;
+	display: inline;
+	margin-right: 30%;
+
+
+}
+#phone{
+	background-color: green;
+	width: 30px;
+	height: 30px;
+	border-radius: 15px;
+	text-align: center;
+	/*position: absolute;*/
+	margin-left: 40%;
+
+
+}
+.outer{
+	background-color: white;
+	width: 25%;
+	border-radius: 10px;
+	margin: auto;
+	border-style: solid;
+}
+#remove{
+	float: left;
+	margin-left: 90%;
+}

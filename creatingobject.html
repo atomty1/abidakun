@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Creating an object</title>
+</head>
+<body>
+<script type="text/javascript">
+/*	var human = {Firstname : 'Promise', No_of_eyes : 2, Skin_color : 'dark', See : function () { if (this.No_of_eyes == 2) {
+		alert('I can see');
+			
+		}
+	}, Nife : function () { if (this.Firstname == 'Taye') {
+			alert('Welcome');
+		} else {
+			alert('Go away');
+		}
+
+	}
+	*/
+
+	//human.Nife();
+
+	function human(firstName, skinColor, height) {
+
+		this.firstName = firstName;
+		this.skinColor = skinColor;
+		this.height = height;
+
+
+	}
+	var taiwo = new human('Taye', 'dark', '6.1');
+	var a = JSON.stringify(taiwo)
+	alert(a);
+</script>
+
+</body>
+</html>

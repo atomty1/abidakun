@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Switch</title>
+	<style type="text/css"></style>
+	<script type="text/javascript">
+		function PushSwitch() {
+			var image = document.getElementById("switch");
+			var light = document.getElementById("bulb");
+			if (image.src.match("switch1.png") && light.src.match("bulb1.jpg")) {
+		        image.src = "switch2.png";
+		        light.src = "bulb2.jpg";
+		    	} else {
+		        image.src = "switch1.png";
+		        light.src = "bulb1.jpg";
+		    	}
+		}
+	
+	</script>
+</head>
+<body>
+<div><img src="switch2.png" id="switch" onclick="PushSwitch();" width="100" height="180">
+	<img src="bulb2.jpg" id="bulb" width="200" height="280">
+</div>
+
+</body>
+</html>
+<!-- <img id="myImage" onclick="changeImage()" src="pic_bulboff.gif" width="100" height="180">
+
+<p>Click the light bulb to turn on/off the light.</p>
+
+<script>
+function changeImage() {
+    var image = document.getElementById('myImage');
+    if (image.src.match("bulbon")) {
+        image.src = "pic_bulboff.gif";
+    } else {
+        image.src = "pic_bulbon.gif";
+    }
+}
+</script> -->

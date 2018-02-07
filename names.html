@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" width="device-width" initial-scale="1">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.css">
+	<title>Names</title>
+</head>
+<body>
+<script type="text/javascript" src="bootstrap/jquery-3.1.1.js"></script>
+<table class="table-bordered" width="50%" id="mytab">
+	<tr>
+		<th>s/n</th>
+		<th>names</th>
+		<th>Close</th>
+	</tr>
+	<tr>
+	<td>1</td>
+	<td>Taiwo</td>
+	<td class="closemiddle1" onclick="hideRow('1')">X</td>
+
+	</tr>
+	<tr>
+	<td>2</td>
+	<td>Nife</td>
+	<td class="closemiddle2" onclick="hideRow('2')">X</td>
+	</tr>
+	<tr>
+	<td>3</td>
+	<td>Abidakun</td>
+	<td class="closemiddle3" onclick="hideRow('3')">X</td>
+	</tr>
+	<button id="show">Show buttons</button>
+	<button id="add">Add row</button>
+	
+</table>
+<input type="text" name="" id="first">
+<!-- <input type="text" name="" id="second"> -->
+<script type="text/javascript">
+var a = 3;
+$("#add").click(function() {
+	a=a +1;
+	var first = $('input').val();
+	$('#mytab').append("<tr>"+ 
+		"<td>"+ a+ "</td>" +
+	"<td>" + first + "</td>"+
+	"<td class='closemiddle"+a+"' onclick='hideRow("+a+")'>X</td>" +
+	"</tr>");
+
+});
+
+function hideRow(a)
+{
+	$(".closemiddle"+a).parent().hide();
+}
+$("#show").click(function() {
+	$("tr").last().hide().show();
+});
+	// $(function() {
+	// $(".closeup").click(function() {
+	// 	$(".closeup").parent().hide();
+	// });
+	// $(".closedown").click(function() {
+	// 	$(".closedown").parent().hide();
+	// });
+	// $(".closemiddle").click(function() {
+	// 	$(".closemiddle").parent().hide();
+	// });
+	// $(".closemiddle"+a).click(function() {
+	// 	$(".closemiddle"+a).parent().hide();
+	// });
+	// $("#show").click(function() {
+	// 	$(".closeup").parent().show();
+	// 	$(".closedown").parent().show();
+	// 	$(".closemiddle").parent().show();
+	// });
+	
+	// });
+</script>
+
+
+
+
+
+
+<script type="text/javascript" src="bootstrap/tether/dist/js/tether.js"></script>
+	<script type="text/javascript" src="bootstrap/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="bootstrap/bootstrap.js"></script>
+	<script type="text/javascript" src="bootstrap/popper.min.js"></script>
+</body>
+</html>

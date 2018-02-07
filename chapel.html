@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chapel</title>
+</head>
+<body>
+<script type="text/javascript">
+	function Taiwo() {
+		var a = document.getElementById('taye').value;
+		var b = document.getElementById('kehinde').value;
+		if (a==b && a !="") {
+			document.getElementById('display').innerHTML = ("Password Match");
+		} else {
+			document.getElementById('display').innerHTML = ("Password doesnt match");
+		};
+		if (a.length>=8) {
+			document.getElementById('disp').innerHTML = ("Strong Password");
+		} else {
+			document.getElementById('disp').innerHTML = ("Weak password");
+		};
+
+	}
+	function Boy() {
+		document.getElementById('change').innerHTML = ("This is a goat");
+
+	}
+</script>
+
+
+<input type="password" name="" id="taye">
+<button type="button">Submit</button>
+<input type="password" name="" id="kehinde">
+<button type="button" onclick="Taiwo()">Repeat</button>
+<div id="display"></div>
+<div id="disp"></div>
+<p id="change">I am a boy</p>
+
+<button type="button" onload = "Boy()">Click me</button>
+
+	
+
+
+
+	
+
+</body>
+</body>
+</html>

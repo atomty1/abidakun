@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome to appliances.com</title>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" width="device-width" initial-scale="1">
+	<link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.css">
+	
+
+	
+	<link rel="stylesheet" type="text/css" href="test.css">
+	<script type="text/javascript">
+		function makeitbig() {
+			// var image = document.getElementById('laptop');
+			var answer = document.getElementById("laptop").style.width = "70px";
+			document.getElementById('display').innerHtml = answer;
+
+		}
+		/*function oluwanifesimi(){
+		var p = document.getElementById('laptopnumber').value;
+		if (p < 50 && p >0) {
+			document.getElementById('laptoptotal').innerHtml = (1000 * a)
+		};
+		else {
+			document.getElementById('laptoptotal').innerHtml = ("input a valid number");
+		}
+		}*/
+	</script>
+	<script type="text/javascript">
+		function Oluwanifesimi(){
+		var calculate = document.getElementById('laptopnumber').value;
+	
+		document.getElementById('laptopTotal').innerHtml = calculate*10;
+		}
+	</script>
+</head>
+<body>
+<div class="container">
+<table class="table table-bordered table-hover table-condensed table-responsive">
+<!-- <caption>Buy your electrical appliances</caption> -->
+<thead>
+<tr>
+	<th>Picture</th>
+	<th>Name</th>
+	<th>Quantity available</th>
+	<th>Price</th>
+	<th>Buy</th>
+	<th>Quantity Remaining</th>
+	<th>Total</th>
+	<th>Check here</th>
+</tr>
+</thead>
+<tbody>
+<tr class="table-row col-md-12">
+	<td><img src="laptop.jpg" class="img-responsive" onmouseover="makeitbig()" id="laptop"></td>
+	<td>Laptop</td>
+	<td>50</td>
+	<td>$1000</td>
+	<td id="laptopnumber"><input type="number" name="" onmouseout="oluwanifesimi()"></td><td id="laptopremain"><button onclick="Oluwanifesimi()">calculate cost</button></td>
+	<td><p id="laptopTotal"></p></td>
+	<td id="display" rowspan="6"></td>
+</tr>
+<tr class="table-row col-md-12">
+	<td><img src="flatscreen.jpg" class="img-responsive"></td>
+	<td>flatscreen</td>
+	<td>40</td>
+	<td>$1500</td>
+	<td><input type="number" name=""></td>
+	<td id="flatscreenremain"></td>
+	<td id="flatscreentotal"></td>
+</tr>
+<tr>
+	<td><img src="television.jpg" class="img-responsive"></td>
+	<td>Television</td>
+	<td>100</td>
+	<td>$500</td>
+	<td><input type="number" name=""></td>
+	<td id="telvisionremain"></td>
+	<td id="televisiontotal"></td>
+</tr>
+<tr>
+	<td><img src="phone.jpg" class="img-responsive"></td>
+	<td>Phone</td>
+	<td>80</td>
+	<td>$200</td>
+	<td><input type="number" name=""></td>
+	<td id="phoneremain"></td>
+	<td id="phonetotal"></td>
+</tr>
+<tr>
+	<td><img src="tablet.jpg" class="img-responsive"></td>
+	<td>tablet</td>
+	<td>50</td>
+	<td>$300</td>
+	<td><input type="number" name=""></td>
+	<td id="tabletremain"></td>
+	<td id="tablettotal"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- <script type="text/javascript">
+alert(Math.floor(Math.random()*1000000))	;
+</script> -->
+<!-- <script>
+var index;
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+for	(index = 0; index < fruits.length; index++) {
+    text += fruits[index];
+}
+</script> -->
+
+
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<title></title>
+</head>
+<body ng-app="Application">
+<div ng-controller="practice">
+	
+<!-- <input type="text" name="" ng-model="firstname">
+<input type="text" name="" ng-model="firstname">
+<input type="text" name="" ng-model="lastname">
+<input type="text" name="" ng-model="middlename">
+<div>
+<span ng-repeat="x in list">{{x}}</span>
+	
+</div> -->
+<!-- <select ng-options="x for x in list" ng-model="list"></select> -->
+<table class="table-bordered" width="40%">
+	<thead>
+		<tr>
+			<th>S/N</th>
+			<th>Name</th>
+			<th>Remove</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="x in people">
+			<td>{{$index+1}}</td>
+			<td>{{x.name}}</td>
+			<td><button ng-click="remove($index)">Remove</button></td>
+		</tr>
+	</tbody>
+	
+</table>
+<input type="text" name="" ng-model="names">
+<input type="button" name="" ng-click="add()" value="add">
+
+
+<script type="text/javascript" src="bootstrap/tether/dist/js/tether.js"></script>
+	<script type="text/javascript" src="bootstrap/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="bootstrap/bootstrap.js"></script>
+	<script type="text/javascript" src="bootstrap/popper.min.js"></script>
+	<script type="text/javascript" src="bootstrap/angular.js"></script>
+	
+	</div>
+
+
+</body>
+</html>
+<script type="text/javascript">
+		var app = angular.module('Application', []);
+		app.controller('practice', function($scope){
+			// $scope.firstname="Taye"
+			// $scope.lastname="Abidakun"
+			// $scope.middlename="Nife"
+			// $scope.list=["Monday", "Tuesday", "wednesday", "Thurday", "Friday"];
+			$scope.people=[];
+			$scope.names;
+			$scope.add=function()
+			{ 
+				var p ={"name":$scope.names};
+				$scope.people.push(p);
+				
+				
+			};
+			$scope.remove= function(val) {
+				$scope.people.splice(val,1)
+			}
+			
+
+			
+		});
+	</script>

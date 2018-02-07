@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+</head>
+<body>
+<script type="text/javascript">
+	function DateandTime() {
+		document.getElementById('display').innerHTML= Date();
+
+		
+	}
+
+
+</script>
+<script type="text/javascript">
+	
+	function myFunction() {
+    var x = document.getElementById("demo");
+    x.style.fontSize = "25px";           
+    x.style.color = "red"; 
+}
+</script>
+
+
+<button type="button" onclick="DateandTime()">Date and Time</button>
+<div id="display"></div>
+
+<p id="demo">JavaScript can change the style of an HTML element.</p>
+
+<button type="button" onclick="myFunction()">Click Me!</button>
+
+<h1>JavaScript Can Validate Input</h1>
+
+<p>Please input a number between 1 and 10:</p>
+
+<input id="numb">
+
+<button type="button" onclick="myFunction()">Submit</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var x, text;
+
+    // Get the value of the input field with id="numb"
+    x = document.getElementById("numb").value;
+
+    // If x is Not a Number or less than one or greater than 10
+    if (isNaN(x) || x < 1 || x > 10) {
+        text = "Input not valid";
+    } else {
+        text = "Input OK";
+    }
+    document.getElementById("demo").innerHTML = text;
+}
+</script>
+<script type="text/javascript">
+	document.write(Date());
+</script>
+<script type="text/javascript">
+a = a++;
+document.write("a++ = ");
+result = a++;
+document.write(result);
+document.write(linebreak);
+	
+</script>
+
+
+<!-- 
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<p id="demo"></p> -->
+
+</body>
+
+</body>
+</html>

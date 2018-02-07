@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	
+</head>
+<body>
+<script type="text/javascript">
+
+	function calculateInterest() {
+		var p = document.getElementById('p').value;
+		var r = document.getElementById('r').value;
+		var t = document.getElementById('t').value; 
+		var i = (p*r*t)/100;
+		document.getElementById('display').innerHTML = ("Your interest on #" + p + " at " + r + "% for " + t + " months is " + i); 
+		}
+	</script>
+
+<table class="table col-lg-6" border="3"> <caption>Interest Rate Calculator</caption>
+		<tr>
+			<td> Principal:</td>
+			<td><input type="number" name="p" id="p"></td>
+			<td rowspan="4" id="display"></td>
+		</tr>
+	<tr>
+			<td>Time:</td>
+			<td><input type="number" name="t" id="t"></td>
+			
+		</tr>
+	<tr>
+			<td>Rate:</td>
+			<td><input type="number" name="r" id="r"></td>
+			
+		</tr>
+	<tr>
+			<td colspan="2">
+			<!-- <form><input type="button" value="Get Interest" onclick="calculateInterest();" /></form> -->
+			<button class="button" onclick="calculateInterest()">GET INTEREST</button></td>
+			
+		</tr>
+	</table>
+
+</body>
+</html>

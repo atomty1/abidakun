@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<meta name="viewport" width="device-width" initial-scale="1">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.css">
+	<title>Check time</title>
+</head>
+
+<body class="container-fluid" align:center onload="time()">
+<script type="text/javascript">
+function time() {
+	var a = new Date();
+	var hrs = a.getHours();
+	var min = a.getMinutes();
+	var sec = a.getSeconds();
+
+	if (min < 10) {
+		min = "0" + min;
+	}
+	if (sec < 10) {
+		sec = "0" + sec;
+	}
+	if (hrs < 12) {
+		document.getElementById('moment').innerHTML = "Am" 
+	} else {
+		document.getElementById('moment').innerHTML = "pm"
+	}
+	if (hrs > 12) {
+		hrs = hrs - 12;
+	}
+	if (hrs < 10) {
+		hrs = "0" + hrs;
+	}
+
+	document.getElementById('time').innerHTML = hrs + ":" + min + ":" + sec;
+
+var recall = setTimeout('time()', 1000);
+}
+var selection = document.getElementsByTagName('select')
+var hourselect = selection[0]
+var minuteselect = selection[1]
+var secondselect = selection[2]
+for (var i = 0; i <60; i++) {
+	if (i<24)
+		hourselect = n
+}
+}
+</script>
+
+<!-- <div class= "bg-primary center" style="width:150px; text-align:center; margin-left:50%">
+<span id="time"></span>
+|
+<span id="moment"></span> -->
+	
+</div>
+<div><div class="leftcolumn">Current Time:</div> <span id="time" style="letter-spacing: 2px"></span>|<span id="moment"></span></div>
+<div><div class="leftcolumn">Set Alarm:</div> <span><select></select> Hour</span> <span><select></select> Minutes</span> <span><select></select> Seconds</span>
+</div>
+
+
+
+</body>
+<script type="text/javascript" src="bootstrap/tether/dist/js/tether.js"></script>
+	<script type="text/javascript" src="bootstrap/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="bootstrap/bootstrap.js"></script>
+	<script type="text/javascript" src="bootstrap/popper.min.js"></script>
+</html>

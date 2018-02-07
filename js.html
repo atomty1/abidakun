@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Interest Calculator</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<script type="text/javascript">
+
+	function calculateInterest() {
+		var p = document.getElementById('prin').value;
+		var r = document.getElementById('rate').value;
+		var t = document.getElementById('time').value; 
+
+		//alert (p); alert (r); alert (t);
+
+
+		var i = (p*r*t)/100;
+		//document.write("Your interest on #" + p + " at " + r + "% for " + t + " months is " + i);
+
+		document.getElementById("display").innerHTML = ("Your interest on #" + p + " at " + r + "% for " + t + " months is " + i); 
+	}
+	</script>
+</head>
+<body>
+
+	<table class="table col-lg-6"> <caption>Interest Rate Calculator</caption>
+		<tr>
+			<td> Principal:</td>
+			<td><input type="text" name="prin" id="prin"></td>
+			<td rowspan="4"><div id="display"></div></td>
+		</tr>
+
+		<tr>
+			<td>Time:</td>
+			<td><input type="text" name="time" id="time"></td>
+			
+		</tr>
+
+		<tr>
+			<td>Rate:</td>
+			<td><input type="text" name="rate" id="rate"></td>
+			
+		</tr>
+
+		<tr>
+			<td colspan="2">
+			<!-- <form><input type="button" value="Get Interest" onclick="calculateInterest();" /></form> -->
+			<button class="button" onclick="calculateInterest();">GET INTEREST</button></td>
+			
+		</tr>
+	</table>
+
+</body>
+</html>

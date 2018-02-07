@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<meta name="viewport" width="device-width" initial-scale="1">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="phone.css">
+	<title>Mobile phone</title>
+	<script type="text/javascript" src= "phone.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+<div class="outer">
+<div>
+<input id="first" type="text" readonly>	
+</div>
+<div id="remove" onclick="remove()"><i class="fa fa-remove" id="remove"></i></div>
+<div class="second"> 
+<ul>
+	<li class="number" onclick="clickme('1')">1</li><li class="number" onclick="clickme('2')" >2</li><li class="number" onclick="clickme('3')">3</li>
+	
+</ul>
+<ul>
+	<li class="number" onclick="clickme('4')">4</li><li class="number" onclick="clickme('5')">5</li><li class="number" onclick="clickme('6')">6</li>
+	
+</ul>
+<ul>
+	<li class="number" onclick="clickme('7')">7</li><li class="number" onclick="clickme('8')">8</li><li class="number" onclick="clickme('9')">9</li>
+	
+</ul>
+<ul>
+	<li class="number" onclick="clickme('0')">0</li><li class="number" onclick="clickme('*')">*</li><li class="number" onclick="clickme('#')">#</li>
+	
+</ul>
+<div id="phone" onclick="device()"><i class="fa fa-phone"  style="font-size: 30px;" ></i></div>
+</div>
+<input type="number" name="" id='plus'>
+
+</div>
+</div>
+
+<script type="text/javascript" src="bootstrap/jquery-3.1.1.js">
+	$(function () {
+		function clickme(val) {
+			if (val == document.getElementById('plus').value) {
+				clickme(val) == clickme(val).hide()
+
+			}
+		}
+	})
+</script>
+
+
+
+
+
+<script type="text/javascript" src="bootstrap/tether/dist/js/tether.js"></script>
+	
+	<script type="text/javascript" src="bootstrap/bootstrap.js"></script>
+	<script type="text/javascript" src="bootstrap/popper.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" width="device-width" initial-scale="1">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.css">
+	<title>Class work</title>
+
+</head>
+<body>
+<p id="demo"></p>
+<p id="demp"></p>
+
+
+
+
+<script>
+document.getElementById("demp").innerHTML = new Date(year,month,date[,hour,minute,second,millisecond ]);
+function alarmclock() {
+	var p = document.getElementById('p').value;
+	var t = Date();
+	if (p==t && p !="") {
+		document.getElementById("demo").innerHTML = ("Correct")
+	} else {document.getElementById("demo").innerHTML = ("Incorrect")}
+}
+
+</script>
+
+
+<div><input type="datetime-local" name="p" id="p"></div>
+<button class="button" onclick="alarmclock()">Set clock</button>
+</body>
+<script type="text/javascript" src="bootstrap/tether/dist/js/tether.js"></script>
+	<script type="text/javascript" src="bootstrap/jquery-3.1.1.js"></script>
+	<script type="text/javascript" src="bootstrap/bootstrap.js"></script>
+	<script type="text/javascript" src="bootstrap/popper.min.js"></script>
+</html>
